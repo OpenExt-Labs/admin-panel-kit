@@ -10,6 +10,10 @@ const menus = [
     label: 'Form'
   },
   {
+    path: '/upload',
+    label: 'Upload'
+  },
+  {
     path: '/data-table',
     label: 'Data Table'
   },
