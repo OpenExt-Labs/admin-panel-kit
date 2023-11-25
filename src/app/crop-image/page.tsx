@@ -14,6 +14,7 @@ import ReactCrop, {
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import getCroppedImg from './crop-utils'
+import { canvasPreview } from './canvas-preview'
 
 function centerAspectCrop(
   mediaWidth: number,
@@ -74,7 +75,7 @@ const CropImage = () => {
   }
 
   return (
-    <div className='w-3/4'>
+    <div className='w-1000px'>
       <Input type="file" onChange={onSelectFile} />
       <div className='flex justify-center py-8'>
         <ReactCrop
