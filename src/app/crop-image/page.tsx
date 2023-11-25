@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 
 import 'react-image-crop/dist/ReactCrop.css'
@@ -13,8 +13,7 @@ import ReactCrop, {
 } from 'react-image-crop'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import getCroppedImg from './crop-utils'
-import { canvasPreview } from './canvas-preview'
+import { getImageCropped } from './crop-utils'
 
 function centerAspectCrop(
   mediaWidth: number,
@@ -36,9 +35,11 @@ function centerAspectCrop(
   )
 }
 
+
 const CropImage = () => {
   const [crop, setCrop] = useState<Crop>()
   const [imgSrc, setImgSrc] = useState('')
+  const imgRef = useRef<HTMLImageElement>(null)
   const [completedCrop, setCompletedCrop] = useState<PixelCrop>()
   const [scale, setScale] = useState(1)
   const [rotate, setRotate] = useState(0)
@@ -63,10 +64,12 @@ const CropImage = () => {
     }
   }
 
+
   async function handleCropImageComplete() {
     try {
       console.log('completedCrop', completedCrop)
-      const cropedImage: any = await getCroppedImg(imgSrc, completedCrop);
+      if (!completedCrop || !imgRef.current) return
+      const cropedImage: any = await getImageCropped(imgRef.current, completedCrop);
       setCropedImageUrl(cropedImage)
       console.log('cropedImgae', cropedImage)
     } catch (error) {
@@ -75,7 +78,7 @@ const CropImage = () => {
   }
 
   return (
-    <div className='w-1000px'>
+    <div className='max-w-1000px'>
       <Input type="file" onChange={onSelectFile} />
       <div className='flex justify-center py-8'>
         <ReactCrop
@@ -87,7 +90,7 @@ const CropImage = () => {
         >
           {
             imgSrc && (
-              <img src={imgSrc} alt="Picture of the author" onLoad={onImageLoad} />
+              <img ref={imgRef} src={imgSrc} alt="Picture of the author" onLoad={onImageLoad} />
             )
           }
         </ReactCrop>
