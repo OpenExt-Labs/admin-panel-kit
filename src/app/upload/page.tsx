@@ -88,6 +88,7 @@ export default function FormValidation() {
                 <FormLabel>Avatar</FormLabel>
                 <FormControl>
                   <Input
+                    className='hover:border-gray-700 hover:cursor-pointer hover:border-2'
                     accept=".jpg, .jpeg, .png, .svg, .gif, .mp4"
                     type="file"
                     onChange={(e) =>
