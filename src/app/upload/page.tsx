@@ -16,14 +16,31 @@ import { Input } from "@/components/ui/input";
 import { Button } from '@/components/ui/button';
 import { useCallback, useState } from 'react';
 
-const MAX_FILE_SIZE = 500000;
+const MAX_FILE_SIZE = 2 * 1024 * 1024;
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
-  avatar: z.any().refine((file) => {
-    if (!file) return false;
-  }, { message: "Please upload a file." })
+  avatar: z.any().superRefine((file, ctx) => {
+    if (!(file instanceof File)) {
+      return ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Please upload a file.',
+      });
+    }
+    if (!ACCEPTED_IMAGE_TYPES.includes(file.type)) {
+      return ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Please upload a valid image file.',
+      });
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      return ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'File size is too large.',
+      });
+    }
+  })
 });
 
 export default function FormValidation() {
