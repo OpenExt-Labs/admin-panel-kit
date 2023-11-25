@@ -14,6 +14,10 @@ const menus = [
     label: 'Upload'
   },
   {
+    path: '/crop-image',
+    label: 'Crop Image'
+  },
+  {
     path: '/data-table',
     label: 'Data Table'
   },
