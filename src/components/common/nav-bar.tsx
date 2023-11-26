@@ -44,11 +44,9 @@ const menus = [
 
 const Item = ({ path, label, activeTab }: any) => {
   return (
-    <div className={`p-3 py-4 flex items-center justify-between text-gray-600 
-    hover:text-gray-800 hover:underline
-    ${activeTab === path ? 'text-black font-bold' : ''}`}>
+    <div className={`flex items-center justify-between text-gray-600 px-2 py-1 hover:text-gray-800 hover:underline ${activeTab === path ? 'text-black font-bold' : ''}`}>
       <Link href={path}>
-        <p className="text-lg">{label}</p>
+        <p className="text-sm">{label}</p>
       </Link>
     </div>
   )
@@ -68,7 +66,7 @@ export default function Navbar({ children }: any) {
     <React.Fragment>
       <div className='flex flex-col w-full h-screen'>
         <div className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-          <div className='flex justify-between items-center'>
+          <div className='flex justify-between items-center container'>
             <Logo />
             <div className=''>
               <a
@@ -80,7 +78,7 @@ export default function Navbar({ children }: any) {
             </div>
           </div>
         </div>
-        <div className='flex '>
+        <div className='flex container'>
           <div className='w-1/5 p-4'>
             {
               menus.map((item: any) => {
