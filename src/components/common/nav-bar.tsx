@@ -69,12 +69,12 @@ export default function Navbar({ children }: any) {
           <div className='flex justify-between items-center container'>
             <Logo />
             <div className=''>
-              <a
+              <Link
                 className='hidden lg:inline-block py-2 px-6 bg-white hover:bg-gray-50 text-gray-600 font-bold rounded-l-xl rounded-t-xl transition duration-200'
                 href='mailto:support@openext.dev'
               >
                 support@openext.dev
-              </a>
+              </Link>
             </div>
           </div>
         </div>
