@@ -8,6 +8,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import Logo from './Logo';
 
 
 const menus = [
@@ -43,11 +44,11 @@ const menus = [
 
 const Item = ({ path, label, activeTab }: any) => {
   return (
-    <div className={`p-3 py-4 flex items-center justify-between text-coolGray-500 
-    hover:text-green-400 hover:bg-white hover:shadow-sm rounded-md
-    ${activeTab === path ? 'text-green-400' : ''}`}>
+    <div className={`p-3 py-4 flex items-center justify-between text-gray-600 
+    hover:text-gray-800 hover:underline
+    ${activeTab === path ? 'text-black font-bold' : ''}`}>
       <Link href={path}>
-        <p className="text-lg font-medium">{label}</p>
+        <p className="text-lg">{label}</p>
       </Link>
     </div>
   )
@@ -65,26 +66,50 @@ export default function Navbar({ children }: any) {
 
   return (
     <React.Fragment>
-      <div className='flex w-full h-screen bg-slate-50 fixed'>
-        <div className='w-1/5 p-4 border-r shadow-md'>
-          {
-            menus.map((item: any) => {
-              return <Item key={item.path} path={item.path} label={item.label} activeTab={activeTab} />
-            })
-          }
+      <div className='flex flex-col w-full h-screen'>
+        <div className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+          <div className='flex justify-between items-center'>
+            <Logo />
+            <div className=''>
+              <a
+                className='hidden lg:inline-block py-2 px-6 bg-white hover:bg-gray-50 text-gray-600 font-bold rounded-l-xl rounded-t-xl transition duration-200'
+                href='mailto:support@openext.dev'
+              >
+                support@openext.dev
+              </a>
+            </div>
+          </div>
         </div>
-        <div className='p-4 w-full h-full rounded-md overflow-auto'>
-          <Tabs defaultValue="demo" className="w-[400px]">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="demo">Demo</TabsTrigger>
-              <TabsTrigger value="code">Code</TabsTrigger>
-              <TabsContent value="demo">
-                <div className='rounded w-[1000px] h-[800px] bg-white p-4'>
-                  {children}
-                </div>
-              </TabsContent>
-            </TabsList>
-          </Tabs>
+        <div className='flex'>
+          <div className='w-1/5 p-4'>
+            {
+              menus.map((item: any) => {
+                return <Item key={item.path} path={item.path} label={item.label} activeTab={activeTab} />
+              })
+            }
+          </div>
+          <div className='p-4 w-full h-full rounded-md'>
+            <Tabs defaultValue="demo" className="w-[400px]">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="demo">Demo</TabsTrigger>
+                <TabsTrigger value="code">Code</TabsTrigger>
+                <TabsContent value="demo">
+                  <div className='rounded w-[1000px] h-[800px] bg-white p-4'>
+                    {children}
+                  </div>
+                </TabsContent>
+                <TabsContent value="code">
+                  <div className='rounded w-[1000px] h-[800px] bg-white p-4'>
+                    {
+                      `
+                      Commoning soon...
+                    `
+                    }
+                  </div>
+                </TabsContent>
+              </TabsList>
+            </Tabs>
+          </div>
         </div>
       </div>
     </React.Fragment >
