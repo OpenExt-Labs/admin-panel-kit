@@ -2,13 +2,15 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation'
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
 
 
 const menus = [
-  {
-    path: '/tabs',
-    label: 'Tabs'
-  },
   {
     path: '/form',
     label: 'Form'
@@ -32,6 +34,10 @@ const menus = [
   {
     path: '/image-card',
     label: 'Image Card'
+  },
+  {
+    path: '/tabs',
+    label: 'Tabs'
   },
 ]
 
@@ -68,7 +74,17 @@ export default function Navbar({ children }: any) {
           }
         </div>
         <div className='p-4 w-full h-full rounded-md overflow-auto'>
-          {children}
+          <Tabs defaultValue="demo" className="w-[400px]">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="demo">Demo</TabsTrigger>
+              <TabsTrigger value="code">Code</TabsTrigger>
+              <TabsContent value="demo">
+                <div className='rounded w-[1000px] h-[800px] bg-white p-4'>
+                  {children}
+                </div>
+              </TabsContent>
+            </TabsList>
+          </Tabs>
         </div>
       </div>
     </React.Fragment >
