@@ -6,6 +6,10 @@ import { usePathname, useSearchParams } from 'next/navigation'
 
 const menus = [
   {
+    path: '/tabs',
+    label: 'Tabs'
+  },
+  {
     path: '/form',
     label: 'Form'
   },
@@ -16,6 +20,10 @@ const menus = [
   {
     path: '/crop-image',
     label: 'Crop Image'
+  },
+  {
+    path: '/sub-menu',
+    label: 'Sub Menu'
   },
   {
     path: '/data-table',
