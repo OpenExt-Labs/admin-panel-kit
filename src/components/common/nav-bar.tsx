@@ -80,7 +80,7 @@ export default function Navbar({ children }: any) {
             </div>
           </div>
         </div>
-        <div className='flex'>
+        <div className='flex '>
           <div className='w-1/5 p-4'>
             {
               menus.map((item: any) => {
@@ -94,12 +94,12 @@ export default function Navbar({ children }: any) {
                 <TabsTrigger value="demo">Demo</TabsTrigger>
                 <TabsTrigger value="code">Code</TabsTrigger>
                 <TabsContent value="demo">
-                  <div className='rounded w-[1000px] h-[800px] bg-white p-4'>
+                  <div className='rounded w-[1000px] h-[800px] bg-white border border-gray-300 p-4'>
                     {children}
                   </div>
                 </TabsContent>
                 <TabsContent value="code">
-                  <div className='rounded w-[1000px] h-[800px] bg-white p-4'>
+                  <div className='rounded w-[1000px] h-[800px] bg-white border border-gray-300 p-4'>
                     {
                       `
                       Commoning soon...
