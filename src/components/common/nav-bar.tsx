@@ -64,7 +64,7 @@ export default function Navbar({ children }: any) {
 
   return (
     <React.Fragment>
-      <div className='flex flex-col w-full h-screen'>
+      <div className='flex flex-col w-full'>
         <div className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
           <div className='flex justify-between items-center container'>
             <Logo />
@@ -86,18 +86,20 @@ export default function Navbar({ children }: any) {
               })
             }
           </div>
-          <div className='p-4 w-full h-full rounded-md'>
-            <Tabs defaultValue="demo" className="w-[400px]">
-              <TabsList className="grid w-full grid-cols-2">
+          <div className='py-6 mx-auto w-full min-w-0 min-h-screen rounded-md'>
+            <Tabs defaultValue="demo" className="w-full">
+              <TabsList className="grid grid-cols-2 w-[400px]">
                 <TabsTrigger value="demo">Demo</TabsTrigger>
                 <TabsTrigger value="code">Code</TabsTrigger>
-                <TabsContent value="demo">
-                  <div className='rounded w-[1000px] h-[800px] bg-white border border-gray-300 p-4'>
+              </TabsList>
+              <div className='my-4 flex flex-col space-y-2'>
+                <TabsContent value="demo" className='w-full'>
+                  <div className='rounded bg-white border border-gray-300 p-4'>
                     {children}
                   </div>
                 </TabsContent>
                 <TabsContent value="code">
-                  <div className='rounded w-[1000px] h-[800px] bg-white border border-gray-300 p-4'>
+                  <div className='rounded bg-white border border-gray-300 p-4'>
                     {
                       `
                       Commoning soon...
@@ -105,7 +107,7 @@ export default function Navbar({ children }: any) {
                     }
                   </div>
                 </TabsContent>
-              </TabsList>
+              </div>
             </Tabs>
           </div>
         </div>
