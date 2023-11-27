@@ -87,6 +87,11 @@ export default function Navbar({ children }: any) {
             }
           </div>
           <div className='py-6 mx-auto w-full min-w-0 min-h-screen rounded-md'>
+            <div className='bg-whitep-4'>
+              {children}
+            </div>
+          </div>
+          {/* <div className='py-6 mx-auto w-full min-w-0 min-h-screen rounded-md'>
             <Tabs defaultValue="demo" className="w-full">
               <TabsList className="grid grid-cols-2 w-[400px]">
                 <TabsTrigger value="demo">Demo</TabsTrigger>
@@ -109,7 +114,7 @@ export default function Navbar({ children }: any) {
                 </TabsContent>
               </div>
             </Tabs>
-          </div>
+          </div> */}
         </div>
       </div>
     </React.Fragment >
