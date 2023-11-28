@@ -65,7 +65,7 @@ export default function FormValidation() {
     <div>
       <div className='mb-6'>
         <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">
-          Upload image
+          Upload Image
         </h1>
         <p className="leading-7 [&amp;:not(:first-child)]:mt-6">
           In this guide, we will take a look at building forms with{" "}
