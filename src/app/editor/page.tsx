@@ -15,12 +15,6 @@ function TipTapEditor() {
         </p>
         <CodeFragment code={`yarn add @tiptap/react @tiptap/pm @tiptap/starter-kit`} />
 
-        <h3 className='font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight'>Sass</h3>
-        <p className='mt-4 scroll-m-20'>
-          We use Sass for styling. You can install it with npm or yarn.
-        </p>
-        <CodeFragment code={`yarn install sass`} />
-
         <h3 className='font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight'>Tabler</h3>
         <p className='mt-4 scroll-m-20'>
           Tabler Pixel-perfect icons that match your design
