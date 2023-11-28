@@ -96,7 +96,7 @@ const CropImage = () => {
           </Link>{" "}
         </p>
       </div>
-      <Input type="file" onChange={onSelectFile} />
+      <Input type="file" onChange={onSelectFile} className='hover:border-gray-700 hover:cursor-pointer hover:border-2' />
       <div className='flex justify-center py-8'>
         <ReactCrop
           crop={crop}
