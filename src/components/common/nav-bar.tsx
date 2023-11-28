@@ -29,8 +29,8 @@ const menus = [
     label: 'Rich Text Editor'
   },
   {
-    path: '/sub-menu',
-    label: 'Sub Menu'
+    path: '/nav-bar',
+    label: 'NavBar'
   }
 ]
 

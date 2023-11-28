@@ -64,8 +64,8 @@ export type MenuItem = {
 
 function SubMenu() {
   return (
-    <aside className='z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0'>
-      <div className='h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800'>
+    <aside className=' rounded-md shadow-sm bg-gray-50 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0'>
+      <div className='h-full px-3 py-4 overflow-y-auto  dark:bg-gray-800'>
         {
           menu.map((item: any) => {
             if (item.subItems.length > 0) {
