@@ -9,6 +9,7 @@ import {
   IconCode,
   IconCodeAsterix,
   IconCornerDownLeft,
+  IconH1,
   IconH2,
   IconH3,
   IconH4,
@@ -19,6 +20,7 @@ import {
   IconPageBreak,
   IconPhoto,
   IconStrikethrough,
+  IconLetterP,
 } from '@tabler/icons-react';
 
 
@@ -86,9 +88,15 @@ const MenuBar = ({ editor }: any) => {
       },
       {
         type: 'paragraph',
-        icon: IconClearFormatting,
+        icon: IconLetterP,
         action: () => editor.chain().focus().setParagraph().run(),
         isActive: editor.isActive('paragraph'),
+      },
+      {
+        type: 'heading1',
+        icon: IconH1,
+        action: () => editor.chain().focus().toggleHeading({ level: 1 }).run(),
+        isActive: editor.isActive('heading', { level: 1 }),
       },
       {
         type: 'heading2',
@@ -152,7 +160,7 @@ const MenuBar = ({ editor }: any) => {
           return (
             <button
               key={index}
-              className={`flex items-center justify-center w-8 h-8 rounded-md hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed ${toolbar.isActive ? 'bg-gray-200' : ''}`}
+              className={`flex items-center justify-center w-8 h-8 rounded-md hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed ${toolbar.isActive ? 'bg-gray-400' : ''}`}
               onClick={toolbar.action}
               disabled={toolbar.disabled}
             >

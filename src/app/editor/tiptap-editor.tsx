@@ -16,6 +16,12 @@ const TipTapEditor = () => {
     content: defaultValue,
     onUpdate: ({ editor }) => {
     },
+    editorProps: {
+      attributes: {
+        class:
+          "prose prose-sm sm:prose m-5 focus:outline-none"
+      }
+    }
   });
 
 
