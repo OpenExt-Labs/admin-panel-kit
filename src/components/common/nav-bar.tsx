@@ -25,16 +25,8 @@ const menus = [
     label: 'Crop Image'
   },
   {
-    path: '/sub-menu',
-    label: 'Sub Menu'
-  },
-  {
-    path: '/data-table',
-    label: 'Data Table'
-  },
-  {
-    path: '/image-card',
-    label: 'Image Card'
+    path: '/editor',
+    label: 'Rich Text Editor'
   },
   {
     path: '/tabs',
