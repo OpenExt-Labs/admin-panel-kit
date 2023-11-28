@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from '@/components/ui/button';
 import { useCallback, useState } from 'react';
+import Link from 'next/link';
 
 const MAX_FILE_SIZE = 2 * 1024 * 1024;
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
@@ -62,6 +63,36 @@ export default function FormValidation() {
 
   return (
     <div>
+      <div className='mb-6'>
+        <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">
+          Upload image
+        </h1>
+        <p className="leading-7 [&amp;:not(:first-child)]:mt-6">
+          In this guide, we will take a look at building forms with{" "}
+          <Link
+            className="font-medium underline underline-offset-4"
+            href="https://react-hook-form.com/"
+          >
+            <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+              react-hook-form
+            </code>
+          </Link>{" "}
+          and{" "}
+          <Link
+            className="font-medium underline underline-offset-4"
+            href="https://zod.dev"
+          >
+            <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+              zod
+            </code>
+          </Link>
+          {`. We're going to use a `}
+          <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+            &lt;FormField&gt;
+          </code>{" "}
+          component to compose accessible forms using Radix UI components.
+        </p>
+      </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField

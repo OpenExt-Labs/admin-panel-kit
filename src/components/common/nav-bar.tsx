@@ -28,10 +28,6 @@ const menus = [
     path: '/editor',
     label: 'Rich Text Editor'
   },
-  {
-    path: '/tabs',
-    label: 'Tabs'
-  },
 ]
 
 const Item = ({ path, label, activeTab }: any) => {

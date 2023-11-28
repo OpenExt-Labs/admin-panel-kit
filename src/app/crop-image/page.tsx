@@ -14,6 +14,7 @@ import ReactCrop, {
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { getImageCropped } from './crop-utils'
+import Link from 'next/link'
 
 function centerAspectCrop(
   mediaWidth: number,
@@ -79,6 +80,22 @@ const CropImage = () => {
 
   return (
     <div className='max-w-1000px'>
+      <div className='mb-6'>
+        <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">
+          Upload image
+        </h1>
+        <p className="leading-7 [&amp;:not(:first-child)]:mt-6">
+          Crop image with
+          <Link
+            className="font-medium underline underline-offset-4"
+            href="https://www.npmjs.com/package/react-image-crop"
+          >
+            <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+              react-image-crop
+            </code>
+          </Link>{" "}
+        </p>
+      </div>
       <Input type="file" onChange={onSelectFile} />
       <div className='flex justify-center py-8'>
         <ReactCrop
