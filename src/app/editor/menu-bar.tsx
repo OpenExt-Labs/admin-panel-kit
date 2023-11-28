@@ -131,7 +131,7 @@ const MenuBar = ({ editor }: any) => {
       {
         type: 'image',
         icon: IconPhoto,
-        action: () => editor.chain().focus().setImage({ src: 'https://source.unsplash.com/8xznAGy4HcY/800x400' }).run()
+        action: () => editor.chain().focus().setImage({ src: 'https://source.unsplash.com/8xznAGy4HcY/400x400' }).run()
       },
       {
         type: 'youtube',

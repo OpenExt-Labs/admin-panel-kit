@@ -43,7 +43,7 @@ const TipTapEditor = () => {
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm sm:prose m-5 focus:outline-none"
+          "prose prose-sm sm:prose m-5 focus:outline-none sm:max-w-none"
       }
     }
   });
