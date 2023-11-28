@@ -14,13 +14,13 @@ const menu = [
     subItems: [
       {
         id: 'menu-1-1',
-        path: '/sub-menu-1',
-        label: 'Sub Menu 1'
+        path: '/menu-1-1',
+        label: 'Menu 1-1'
       },
       {
         id: 'menu-1-2',
-        path: '/sub-menu-2',
-        label: 'Sub Menu 2'
+        path: '/menu-1-2',
+        label: 'Menu 1-2'
       },
     ]
   },
@@ -31,18 +31,18 @@ const menu = [
     subItems: [
       {
         id: 'menu-2-1',
-        path: '/sub-menu-4',
-        label: 'Sub Menu 4'
+        path: '/menu-2-1',
+        label: 'Menu 2-1'
       },
       {
         id: 'menu-2-2',
-        path: '/sub-menu-5',
-        label: 'Sub Menu 5'
+        path: '/menu-2-2',
+        label: 'Menu 2-2'
       },
       {
         id: 'menu-2-3',
-        path: '/sub-menu-6',
-        label: 'Sub Menu 6'
+        path: '/menu-2-3',
+        label: 'Menu 2-3'
       }
     ]
   },
