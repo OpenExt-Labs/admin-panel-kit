@@ -21,6 +21,8 @@ import {
   IconPhoto,
   IconStrikethrough,
   IconLetterP,
+  IconVideo,
+  IconBrandYoutube,
 } from '@tabler/icons-react';
 
 
@@ -41,10 +43,8 @@ const MenuBar = ({ editor }: any) => {
     if (url) {
       editor.commands.setYoutubeVideo({
         src: url,
-        width: 640,
-        height: 480,
-        // width: Math.max(320, parseInt(widthRef.current.value, 10)) || 640,
-        // height: Math.max(180, parseInt(heightRef.current.value, 10)) || 480,
+        width: Math.max(320, window.innerWidth || 640),
+        height: Math.max(180, window.innerHeight || 480),
       });
     }
   };
@@ -127,6 +127,16 @@ const MenuBar = ({ editor }: any) => {
         icon: IconListNumbers,
         action: () => editor.chain().focus().toggleOrderedList().run(),
         isActive: editor.isActive('orderedList'),
+      },
+      {
+        type: 'image',
+        icon: IconPhoto,
+        action: () => editor.chain().focus().setImage({ src: 'https://source.unsplash.com/8xznAGy4HcY/800x400' }).run()
+      },
+      {
+        type: 'youtube',
+        icon: IconBrandYoutube,
+        action: addYoutubeVideo,
       },
       {
         type: 'blockquote',

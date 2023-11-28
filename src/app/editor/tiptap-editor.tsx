@@ -1,6 +1,9 @@
 'use client'
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import Image from '@tiptap/extension-image'
+import TextAlign from '@tiptap/extension-text-align'
+import Youtube from '@tiptap/extension-youtube'
 import MenuBar from './menu-bar';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -17,6 +20,21 @@ const TipTapEditor = () => {
   const editor = useEditor({
     extensions: [
       StarterKit,
+      TextAlign.configure({
+        alignments: ['left', 'center', 'right', 'justify'],
+        types: ['heading', 'paragraph'],
+      }),
+      Image.configure({
+        HTMLAttributes: {
+          style: 'display: block; margin: 0 auto;',
+        },
+      }),
+      Youtube.configure({
+        controls: false,
+        HTMLAttributes: {
+          style: 'display: block; margin: 0 auto; width: 100%;',
+        },
+      }),
     ],
     content: defaultValue,
     onUpdate: ({ editor }) => {
