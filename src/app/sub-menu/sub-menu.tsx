@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Item from './item'
+import ListItems from './list-item'
 
 
 const menu = [
@@ -67,6 +68,9 @@ function SubMenu() {
       <div className='h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800'>
         {
           menu.map((item: any) => {
+            if (item.subItems.length > 0) {
+              return <ListItems key={item.id} item={item} />
+            }
             return (
               <div key={item.path}>
                 <Item id={item.id} path={item.path} label={item.label} />

@@ -6,6 +6,11 @@ export const activeMenu = atom({
   default: "menu-1",
 });
 
+export const activeMenuItems = atom({
+  key: "activeMenuItems",
+  default: ['menu-1'],
+});
+
 export default function RecoilProvider({ children }: any) {
   return <RecoilRoot>{children}</RecoilRoot>;
 }
