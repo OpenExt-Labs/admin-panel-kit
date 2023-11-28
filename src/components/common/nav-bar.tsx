@@ -55,10 +55,10 @@ export default function Navbar({ children }: any) {
       <div className='flex flex-col w-full'>
         <div className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
           <div className='flex justify-between items-center container'>
-            {/* <Logo /> */}
+            <Logo />
             <div className=''>
               <Link
-                className='hidden lg:inline-block py-2 px-6 bg-white hover:bg-gray-50 text-gray-600 font-bold rounded-l-xl rounded-t-xl transition duration-200'
+                className='hidden font-serif lg:inline-block py-2 px-6 bg-white hover:bg-gray-50 text-gray-600 font-bold rounded-l-xl rounded-t-xl transition duration-200'
                 href='mailto:support@openext.dev'
               >
                 support@openext.dev
