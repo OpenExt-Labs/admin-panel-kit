@@ -7,6 +7,7 @@ import Youtube from '@tiptap/extension-youtube'
 import MenuBar from './menu-bar';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import Link from '@tiptap/extension-link'
 
 
 
@@ -20,6 +21,9 @@ const TipTapEditor = () => {
   const editor = useEditor({
     extensions: [
       StarterKit,
+      Link.configure({
+        openOnClick: false,
+      }),
       TextAlign.configure({
         alignments: ['left', 'center', 'right', 'justify'],
         types: ['heading', 'paragraph'],
@@ -44,8 +48,8 @@ const TipTapEditor = () => {
       attributes: {
         class:
           "prose prose-sm sm:prose m-5 focus:outline-none sm:max-w-none"
-      }
-    }
+      },
+    },
   });
 
 

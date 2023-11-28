@@ -52,6 +52,17 @@ const MenuBar = ({ editor }: any) => {
     }
   };
 
+  const setLink = () => {
+    const previousUrl = editor.getAttributes('link').href;
+    const url = window.prompt('URL', previousUrl);
+    if (url === null) return;
+    if (url === '') {
+      editor.chain().focus().extendMarkRange('link').unsetLink().run();
+      return;
+    }
+    editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
+  };
+
 
   const toolbars: ToolbarItem[] =
     [
@@ -82,6 +93,19 @@ const MenuBar = ({ editor }: any) => {
         disabled: !editor.can().chain().focus().toggleCode().run(),
         action: () => editor.chain().focus().toggleCode().run(),
         isActive: editor.isActive('code'),
+      },
+      {
+        type: 'link',
+        icon: IconLink,
+        disabled: !editor
+          .can()
+          .chain()
+          .focus()
+          .extendMarkRange('link')
+          .unsetLink()
+          .run(),
+        action: setLink,
+        isActive: editor.isActive('link'),
       },
       {
         type: 'clear',
