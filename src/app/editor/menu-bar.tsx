@@ -1,4 +1,5 @@
 'use client'
+import { IconAlignJustified, IconAlignRight } from '@tabler/icons-react';
 import './style.scss';
 
 import {
@@ -23,6 +24,8 @@ import {
   IconLetterP,
   IconVideo,
   IconBrandYoutube,
+  IconAlignLeft,
+  IconAlignCenter,
 } from '@tabler/icons-react';
 
 
@@ -115,6 +118,26 @@ const MenuBar = ({ editor }: any) => {
         icon: IconH4,
         action: () => editor.chain().focus().toggleHeading({ level: 4 }).run(),
         isActive: editor.isActive('heading', { level: 4 }),
+      },
+      {
+        type: 'alignLeft',
+        icon: IconAlignLeft,
+        action: () => editor.chain().focus().setTextAlign('left').run(),
+      },
+      {
+        type: 'alignRight',
+        icon: IconAlignRight,
+        action: () => editor.chain().focus().setTextAlign('right').run(),
+      },
+      {
+        type: 'alignCenter',
+        icon: IconAlignCenter,
+        action: () => editor.chain().focus().setTextAlign('center').run(),
+      },
+      {
+        type: 'alignJustify',
+        icon: IconAlignJustified,
+        action: () => editor.chain().focus().setTextAlign('justify').run(),
       },
       {
         type: 'bulletList',
