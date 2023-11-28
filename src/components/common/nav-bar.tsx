@@ -78,8 +78,8 @@ export default function Navbar({ children }: any) {
             </div>
           </div>
         </div>
-        <div className='flex container'>
-          <div className='w-1/5 p-4'>
+        <div className='flex container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10'>
+          <div className='w-full p-4 hidden h-[calc(100vh-3.5rem)] md:sticky  md:block'>
             {
               menus.map((item: any) => {
                 return <Item key={item.path} path={item.path} label={item.label} activeTab={activeTab} />
