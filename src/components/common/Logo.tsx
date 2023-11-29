@@ -7,7 +7,7 @@ const Logo = () => {
       <Link href='/'>
         <div className='flex'>
           <div className=''>
-            <Image src='/logo7.svg' alt='OpenExt logo' width={80} height={80} loading='lazy' />
+            <Image src='/logo8.svg' alt='OpenExt logo' width={80} height={80} loading='lazy' />
           </div>
           {/* <span className='text-lg font-serif font-semibold my-auto' style={{ color: '#1A7F75' }}>OpenExt</span> */}
         </div>
