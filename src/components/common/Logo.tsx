@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 const Logo = () => {
   return (
-    <div className='text-gray-600'>
+    <div className='text-gray-600 py-2'>
       <Link href='/'>
-        <div className='flex w-40'>
-          <div className='relative w-full'>
-            <Image src='/logo.jpeg' alt='OpenExt logo' fill loading='lazy' />
+        <div className='flex'>
+          <div className=''>
+            <Image src='/logo5.svg' alt='OpenExt logo' width={48} height={48} loading='lazy' />
           </div>
-          <span className='text-lg font-serif font-semibold px-2'>Web Solutions</span>
+          <span className='text-lg font-serif font-semibold my-auto' style={{ color: '#1A7F75' }}>OpenExt</span>
         </div>
       </Link>
     </div>
